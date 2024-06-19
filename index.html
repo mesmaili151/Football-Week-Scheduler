@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fußballwoche Scheduler</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body class="bg-gray-800 flex flex-col items-center justify-center min-h-screen p-12">
     <div class="bg-white p-12 rounded-lg shadow-lg w-4/5">
         <h1 class="text-2xl mb-4">Fußballwoche Scheduler</h1>
-        <div class="flex justify-between">
-            <div class="w-1/2 pr-4">
-                <label for="date" class="block mb-2">Wählen Sie ein Datum:</label>
+        <div class="flex justify-between flex-wrap">
+            <div class="w-full md:w-1/2 pr-4 mb-4 md:mb-0">
                 <input type="date" id="date" class="border p-2 mb-4 block w-full rounded-md">
                 <label for="von" class="block mb-2">Von:</label>
                 <input type="time" id="von" class="border p-2 mb-4 block w-full rounded-md">
@@ -20,15 +19,18 @@
                 <input type="time" id="bis" class="border p-2 mb-4 block w-full rounded-md">
                 <button onclick="generateText()" class="bg-blue-500 text-white py-2 px-4 rounded">Text generieren</button>
             </div>
-            <div class="w-1/2 pl-4 flex justify-center items-center">
-                <img src="assets/images/FCSHASHIN.svg" alt="FC Shahin" class="mb-4 w-1/2 rounded-md">
-            </div>
-        </div>
-        <div id="textCopyContainer" class="hidden">
-            <div class="flex justify-between">
-                <div class="w-full pr-4">
-                    <div id="result1" class="border p-4 bg-gray-100 rounded-md mb-4"></div>
-                    <div id="result2" class="border p-4 bg-gray-100 rounded-md mb-4"></div>
+            <div class="w-full md:w-1/2 mb-4 md:mb-0" id="textCopyContainer">
+                <div class="w-full pb-4 md:mb-0 flex">
+                    <div id="result1" class="border p-4 bg-gray-100 rounded-l-lg w-full"></div>
+                    <button onclick="copyText('result1')" class="bg-green-500 text-white py-2 px-4 rounded-r-lg">
+                        Copy
+                    </button>
+                </div>
+                <div class="w-full pb-4 md:mb-0 flex">
+                    <div id="result2" class="border p-4 bg-gray-100 rounded-l-lg w-full"></div>
+                    <button onclick="copyText('result2')" class="bg-green-500 text-white py-2 px-4 rounded-r-lg">
+                        Copy
+                    </button>
                 </div>
             </div>
         </div>
@@ -37,6 +39,6 @@
     <footer class="mt-6 text-white">
         &copy; <span id="year"></span> Made with love by Mesmaili
     </footer>
-    <script src="assets/js/script.js"></script>
+    <script src="/assets/js/script.js"></script>
 </body>
 </html>

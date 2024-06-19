@@ -38,6 +38,16 @@ function generateText() {
     textCopyContainer.classList.remove('hidden');
 }
 
+function copyText(elementId) {
+    const resultDiv = document.getElementById(elementId);
+    const text = resultDiv.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+        alert('Text wurde kopiert!');
+    }).catch(err => {
+        console.error('Fehler beim Kopieren des Textes: ', err);
+    });
+}
+
 function getWeekNumber(date) {
     const firstJan = new Date(date.getFullYear(), 0, 1);
     const pastDaysOfYear = (date - firstJan) / 86400000;
