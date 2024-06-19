@@ -33,9 +33,6 @@ function generateText() {
 
     resultDiv1.innerHTML = resultText1;
     resultDiv2.innerHTML = resultText2;
-
-    // Show the copy container
-    textCopyContainer.classList.remove('hidden');
 }
 
 function copyText(elementId) {
